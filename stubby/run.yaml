@@ -1,0 +1,315 @@
+- request:
+    method: POST
+    url: /token/refresh
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: token.json
+
+- request:
+    method: POST
+    url: /login
+    post: "(.*)[\"username\":\"12345\"](.*)"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: MR_12345.json
+
+- request:
+    method: GET
+    url: /brands
+    query:
+      dealerCode:
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: brands.json
+
+- request:
+    method: GET
+    url: /models
+    query:
+      brand: "^(?i)(HONDA)$"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: honda_models.json
+
+- request:
+    method: GET
+    url: /models
+    query:
+      brand: "^(?i)(ISUZU)$"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: isuzu_models.json
+
+- request:
+    method: GET
+    url: /years
+    query:
+      brand: "^(?i)(ISUZU)$"
+      model: "^(?i)(MU-X)$"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: mu_x_year.json
+
+- request:
+    method: GET
+    url: /years
+    query:
+      brand: "^(?i)(ISUZU)$"
+      model: "^(?i)(D-MAX)$"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: d_max_year.json
+
+- request:
+    method: GET
+    url: /cc
+    query:
+      brand: "^(?i)(ISUZU)$"
+      model: "^(?i)(MU-X)$"
+      year: "2018"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: mu_x_2018.json
+
+- request:
+    method: GET
+    url: /cc
+    query:
+      brand: "^(?i)(ISUZU)$"
+      model: "^(?i)(MU-X)$"
+      year: "2019"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: mu_x_2019.json
+
+- request:
+    method: GET
+    url: /submodel
+    query:
+      brand: "^(?i)(ISUZU)$"
+      model: "^(?i)(MU-X)$"
+      year: "2018"
+      cc: "2.5"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: mu_x_2018_2.5cc.json
+
+- request:
+    method: GET
+    url: /v2/submodel
+    query:
+      brand: "^(?i)(ISUZU)$"
+      model: "^(?i)(MU-X)$"
+      year: "2018"
+      cc: "2.5"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: v2_mu_x_2018_2.5cc.json
+
+- request:
+    method: GET
+    url: /price
+    query:
+      code: "^(?i)(ISUZUMUX25VD_A2)$"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: ISUZUMUX25VD_A2.json
+
+- request:
+    method: GET
+    url: /price
+    query:
+      code: "^(?i)(ISUZUMUX25VDNM2)$"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: ISUZUMUX25VDNM2.json
+
+- request:
+    method: GET
+    url: /price
+    query:
+      code: "^(?i)(ISUZUMUX25VDNA2)$"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: ISUZUMUX25VDNA2.json
+
+- request:
+    method: GET
+    url: /price
+    query:
+      code: "^(?i)(ISUZUMUX25VDNA4)$"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: ISUZUMUX25VDNA4.json
+
+- request:
+    method: GET
+    url: /appChannel
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: app_channel.json
+
+- request:
+    method: GET
+    url: /address
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: address_by_zipcode_30000.json
+
+- request:
+    method: GET
+    url: /zipCodeByAddress
+    query:
+      province: "กรุงเทพมหานคร"
+      district: "ลาดพร้าว"
+      subDistrict: "ลาดพร้าว"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: zipCodeByAddress.json
+
+- request:
+    method: GET
+    url: /zipCodeByAddress
+    query:
+      province: "กรุงเทพมหานคร"
+      district: "พระโขนง"
+      subDistrict: "คลองเตย"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: zipCodeByAddress2.json
+
+- request:
+    method: GET
+    url: /zipCode
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: zipCodeByAddress2.json
+- request:
+    method: POST
+    url: /application/inquiry/loan/verify
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: duplicateLoan2.json
+- request:
+    method: POST
+    url: /application/inquiry/dopa/verify
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: dopa.json
+
+- request:
+    method: POST
+    url: /mrProfile
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: MR_12345.json
+- request:
+    method: POST
+    url: /otp/login/generate
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    file: otp_login.json
+
+- request:
+    method: POST
+    url: /otp/login/generate
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    file: otp_login.json
+
+- request:
+    method: POST
+    url: /otp/login/verify
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    file: otp_login_verify.json
+- request:
+    method: POST
+    url: /uploadDocument
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: uploadDocResponse.json
+
+- request:
+    method: POST
+    url: /submitApplicationForm
+    post: "(.*)"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: submitLoan.json
+- request:
+    method: POST
+    url: /sendEmail
+    post: "(.*)"
+  response:
+    headers:
+      content-type: application/json
+    status: 200
+    file: sendEmail.json
+
+- request:
+    method: POST
+    url: /login
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+      Access-Control-Allow-Origin: "*"
+    body: >
+         {"status" : "OK"}
