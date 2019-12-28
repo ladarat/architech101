@@ -26,5 +26,10 @@ class DemoAdaptor constructor(
         holder.itemView.demoNameText.text = items[position].name
     }
 
+    fun update(items: List<DemoProfile>) {
+        this.items = items
+        notifyDataSetChanged()
+    }
+
     class DemoViewHolder(view: View) : RecyclerView.ViewHolder(view)
 }
