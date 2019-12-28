@@ -1,9 +1,10 @@
-package com.yiing.architech101
+package com.yiing.architech101.ui
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
+import com.yiing.architech101.ui.DemoProfile
 
 class DemoViewModel : ViewModel() {
 
