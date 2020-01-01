@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewModel = ViewModelProvider.NewInstanceFactory().create(DemoViewModel::class.java)
+        viewModel = ViewModelProvider.NewInstanceFactory().create(DemoViewModel::class.java)// เป็นการใช้งาน viewmodel แบบ ธรรมดา
         observe()
         viewModel.loadData()
 

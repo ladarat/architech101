@@ -2,25 +2,30 @@ package com.yiing.architech101.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.yiing.architech101.R
 import kotlinx.android.synthetic.main.activity_flow_nav.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FlowNavActivity : AppCompatActivity() {
-    private lateinit var viewModel: DemoViewModel
+
+    private val viewModel: DemoViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_flow_nav)
 
-        viewModel = ViewModelProvider.NewInstanceFactory().create(DemoViewModel::class.java)
         observe()
         viewModel.loadData()
-
+        busExamTv.text = "loding"
     }
 
     private fun observe() {
-        busExamTv.text = "loding"
+//        busExamTv.text =
+        viewModel.loading.observe(this, Observer {
+            busExamTv.text = it
+        })
     }
 
 

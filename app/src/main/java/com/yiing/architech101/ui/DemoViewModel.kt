@@ -12,14 +12,22 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 
 class DemoViewModel constructor(
-    val todolistRepo: TodolistRepository = TodolistRepoImpl(),
-    val scheduleProvider: SchedulerProvider = AppSchedulerProvider()
+    val todolistRepo: TodolistRepository,
+    val scheduleProvider: SchedulerProvider
 ) :
     ViewModel() {
     private val disposable = CompositeDisposable()
     private val _data = MediatorLiveData<List<DemoProfile>>()
     val data: LiveData<List<DemoProfile>>
         get() = _data
+
+    private val _loading = MediatorLiveData<String>()
+    val loading: LiveData<String>
+        get() = _loading
+
+    fun loading(data: String) {
+        _loading.value = data
+    }
 
     fun loadData() {
         todolistRepo.getTodoList()
