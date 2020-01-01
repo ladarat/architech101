@@ -1,6 +1,10 @@
 package com.yiing.architech101.ui
 
+import com.google.gson.annotations.SerializedName
+
 data class DemoProfile(
-    val name: String,
-    val code: String
+    @SerializedName("userId") val userId: Int,
+    @SerializedName("id") val id: Int,
+    @SerializedName("title") val title: String,
+    @SerializedName("completed") val completed: Boolean
 )

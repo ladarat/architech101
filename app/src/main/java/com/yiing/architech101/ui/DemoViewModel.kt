@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
-import com.yiing.architech101.ui.DemoProfile
 
 class DemoViewModel : ViewModel() {
 
@@ -14,8 +13,8 @@ class DemoViewModel : ViewModel() {
 
     fun loadData() {
         val data = listOf(
-            DemoProfile(name = "bas", code = "02"),
-            DemoProfile(name = "ying", code = "01")
+            DemoProfile(userId = "bas", id = "02"),
+            DemoProfile(userId = "ying", id = "01")
         )
 
         Log.d("DemoViewModel", "loadData")
