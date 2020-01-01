@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/firstDemoFragment">
+
+    <fragment
+        android:id="@+id/firstDemoFragment"
+        android:name="com.yiing.architech101.ui.FirstDemoFragment"
+        android:label="fragment_first_demo"
+        tools:layout="@layout/fragment_first_demo" >
+        <action
+            android:id="@+id/action_firstDemoFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.yiing.architech101.ui.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" />
+
+</navigation>
