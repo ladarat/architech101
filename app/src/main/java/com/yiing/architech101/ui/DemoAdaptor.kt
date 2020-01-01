@@ -24,7 +24,7 @@ class DemoAdaptor constructor(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        holder.itemView.demoNameText.text = items[position].userId
+        holder.itemView.demoNameText.text = items[position].title
     }
 
     fun update(items: List<DemoProfile>) {

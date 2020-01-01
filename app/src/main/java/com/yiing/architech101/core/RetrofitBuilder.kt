@@ -1,4 +1,4 @@
-package com.yiing.architech101.repo
+package com.yiing.architech101.core
 
 import com.yiing.architech101.BuildConfig
 import okhttp3.OkHttpClient
