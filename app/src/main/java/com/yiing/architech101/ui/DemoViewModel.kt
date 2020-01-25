@@ -29,8 +29,14 @@ class DemoViewModel constructor(
         _loading.value = data
     }
 
+    fun hideLoading(data: String) {
+        _loading.value = data
+    }
+
     fun loadData() {
         todolistRepo.getTodoList()
+            .doOnSubscribe { loading("loading") }
+            .doOnTerminate { hideLoading("hide loading") }
             .observeOn(scheduleProvider.main())// ถ้าทำเสร็จให้กลับที่ main trade
             .subscribeOn(scheduleProvider.io())// background trade
             .subscribe({

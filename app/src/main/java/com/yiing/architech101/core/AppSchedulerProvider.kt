@@ -8,8 +8,8 @@ class AppSchedulerProvider : SchedulerProvider {
 
     override fun main(): Scheduler = AndroidSchedulers.mainThread()
 
-    override fun computation(): Scheduler = Schedulers.computation()
+    override fun computation(): Scheduler = Schedulers.computation() // genQR for calc bitmap
 
-    override fun io(): Scheduler = Schedulers.io()
+    override fun io(): Scheduler = Schedulers.io() // call service or db
 
 }

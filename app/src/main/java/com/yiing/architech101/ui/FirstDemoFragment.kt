@@ -26,7 +26,7 @@ class FirstDemoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         btnToSecond.setOnClickListener {
-            viewModel.loading("from first")
+            viewModel.loadData()
             findNavController()
                 .navigate(R.id.secondFragment, bundleOf("keyyyy" to "from first"))
         }

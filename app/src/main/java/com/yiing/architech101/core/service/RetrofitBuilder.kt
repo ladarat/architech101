@@ -1,7 +1,8 @@
-package com.yiing.architech101.core
+package com.yiing.architech101.core.service
 
 import com.yiing.architech101.BuildConfig
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -18,15 +19,15 @@ fun <T> createRetrofitBuilder(clazzService: Class<T>): T {
 }
 
 private fun createOkHttpClient(): OkHttpClient {
-//        val bodyLogging = HttpLoggingInterceptor()
-//        bodyLogging.level = HttpLoggingInterceptor.Level.BODY
+        val bodyLogging = HttpLoggingInterceptor()
+        bodyLogging.level = HttpLoggingInterceptor.Level.BODY
 
     val client = OkHttpClient.Builder()
         .connectTimeout(30, TimeUnit.SECONDS)
         .readTimeout(20, TimeUnit.SECONDS)
 
     if (BuildConfig.DEBUG) {
-//            client.addNetworkInterceptor(bodyLogging)
+            client.addNetworkInterceptor(bodyLogging)
     }
 
     return client.build()
