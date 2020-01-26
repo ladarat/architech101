@@ -1,30 +1,10 @@
 - request:
     method: POST
-    url: /token/refresh
-  response:
-    headers:
-      content-type: application/json
-    status: 200
-    file: token.json
-
-- request:
-    method: POST
     url: /login
-    post: "(.*)[\"username\":\"12345\"](.*)"
   response:
     headers:
       content-type: application/json
     status: 200
     body: >
-      {"status" : "OK"}
-
-- request:
-    method: POST
-    url: /login
-  response:
-    status: 200
-    headers:
-      content-type: application/json
-      Access-Control-Allow-Origin: "*"
-    body: >
-         {"status" : "OK"}
+            {"name" : "ying",
+                "gender": "Female"}

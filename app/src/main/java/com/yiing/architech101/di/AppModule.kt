@@ -16,7 +16,7 @@ val appModule = module {
 //            .build()
 //    }
 
-    single<TodoService> { TodolistServiceImpl().createService() }
+
     single<TodolistRepository> { TodolistRepoImpl(get()) }
     single<SchedulerProvider> { AppSchedulerProvider() }
 

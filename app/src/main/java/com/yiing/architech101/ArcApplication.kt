@@ -1,8 +1,7 @@
 package com.yiing.architech101
 
 import android.app.Application
-import com.yiing.architech101.di.appModule
-import com.yiing.architech101.di.viewModelModule
+import com.yiing.architech101.di.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -18,6 +17,9 @@ class ArcApplication : Application() {
             modules(
                 listOf(
                     appModule,
+                    serviceModule,
+                    repositoryModule,
+                    useCaseModule,
                     viewModelModule
                 )
             )

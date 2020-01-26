@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit
 fun <T> createRetrofitBuilder(clazzService: Class<T>): T {
     return Retrofit.Builder()
         .client(createOkHttpClient())
-        .baseUrl("https://jsonplaceholder.typicode.com/")
+        .baseUrl("http://192.168.43.82:8888/")
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build()

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/firstDemoFragment"
-        android:name="com.yiing.architech101.ui.FirstDemoFragment"
+        android:name="com.yiing.architech101.ui.login.FirstDemoFragment"
         android:label="fragment_first_demo"
         tools:layout="@layout/fragment_first_demo" >
         <action
